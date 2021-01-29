@@ -1,0 +1,15 @@
+.popup__input-error {
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
+    color: #FF0000;
+    height: 33px;
+    position: absolute;
+    left: 36px;
+    right: 36px;
+    top: 237px;
+
+}
+.popup__input-error:first-of-type {
+    top: 160px;
+}

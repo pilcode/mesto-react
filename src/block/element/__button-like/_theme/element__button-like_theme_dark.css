@@ -1,0 +1,13 @@
+.element__button-like_theme_dark {
+        background: transparent url('../../../../images/Vector-like-black.svg') center no-repeat;
+        background-size: 18px 20px;
+        width: 20px;
+        height: 18px;
+        border: none;
+        padding: 0;
+        flex-shrink: 0;
+}
+
+.element__button-like_theme_dark:hover {
+    cursor: pointer;
+    }

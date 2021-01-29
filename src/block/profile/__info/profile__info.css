@@ -1,0 +1,11 @@
+.profile__info {
+    padding: 0 16px 0 25px;
+    min-width: 0;
+}
+
+/*Для экранов с расширением  320-767*/
+@media screen and (max-width: 767px) {
+    .profile__info {
+        padding: 0;
+    }
+}

@@ -1,0 +1,23 @@
+.footer__copyright {
+    margin: 66px auto 61px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 1.22;
+    color: #545454;
+}
+
+/*Для экранов с расширением  320-1023*/
+@media screen and (max-width: 1023px) {
+    .footer__copyright {
+        margin: 48px auto 36px;
+    }
+}
+
+/*Для экранов с расширением  320-767*/
+@media screen and (max-width: 767px) {
+    .footer__copyright {
+        font-size: 14px;
+        line-height: 1.2;
+    }
+}

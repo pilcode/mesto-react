@@ -1,0 +1,20 @@
+.profile__about {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 1.22;
+    margin: 16px 0 0;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+/*Для экранов с расширением  320-767*/
+@media screen and (max-width: 767px) {
+    .profile__about {
+        margin: 14px 0 36px;
+        font-size: 14px;
+        line-height: 1.2;
+        text-align: center;
+    }
+}
