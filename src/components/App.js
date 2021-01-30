@@ -1,39 +1,18 @@
 import React from 'react';
-// import './App.css';
-import logoPath from './images/logo.svg';
-import cousteauPath from './images/Jacques-Yves-Cousteau.jpg'
+// import ReactDOM from 'react-dom';
+import Header from './Header.js';
+import Main from './Main.js';
+import Footer from './Footer.js';
+
+
 
 function App() {
   return (
     <>
       <div className="page">
-        <header className="header">
-          <img className="logo " src={logoPath} alt="Логотип проекта Место"/>
-        </header>
-
-        <main className="content">
-          <section className="profile">
-            <button type="button" className="profile__edit-avatar">
-              <img className="profile__avatar" src={cousteauPath} alt="Фотопортрет Жак-Ив Кусто"/>
-            </button>
-
-            <div className="profile__info">
-              <div className="profile__info-wrapper">
-                <h1 className="profile__name">Жак-Ив Кусто</h1>
-                <button type="button" className="profile__edit-button"></button>
-              </div>
-              <p className="profile__about">Исследователь океана</p>
-            </div>
-
-            <button type="button" className="profile__add-button"></button>
-          </section>
-
-          <section className="elements" aria-label="Места, которыe стоит посетить"></section>
-        </main>
-
-        <footer className="footer">
-          <p className="footer__copyright">&copy; 2020 Mesto Russia</p>
-        </footer>
+        <Header />
+        <Main />
+        <Footer />
       </div>
 
       <div className="popup popup_type_edit">
