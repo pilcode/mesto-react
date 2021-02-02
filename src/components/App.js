@@ -11,8 +11,6 @@ function App() {
   const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = React.useState(false);
   const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = React.useState(false);
   const [isAddPlacePopupOpen, setIsAddPlacePopupOpen] = React.useState(false);
-  // const [onClose, setOnClose] = React.useState(false);
-
 
   function handleEditProfileClick() {
     setIsEditProfilePopupOpen(true);
@@ -233,7 +231,7 @@ function App() {
         </div>
       </div> */}
     
-      <template id="card">
+      {/* <template id="card">
         <article className="element">
           <button type="button" className="element__button-delete"></button>
           <div className="element__wrapper">
@@ -247,7 +245,7 @@ function App() {
             </div>
           </div>
         </article>
-      </template>
+      </template> */}
     </>
   );
 }
