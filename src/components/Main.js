@@ -4,7 +4,7 @@ import {api} from '../utils/api.js';
 import Card from './Card.js';
 
 
-function Main({onEditProfile, onEditAvatar, onAddPlace}) {
+function Main({onEditProfile, onEditAvatar, onAddPlace, onCardClick}) {
   const [userId, setUserId] = React.useState('');
   const [userName, setUserName] = React.useState('');
   const [userDescription, setUserDescription] = React.useState('');
@@ -15,6 +15,7 @@ function Main({onEditProfile, onEditAvatar, onAddPlace}) {
   React.useEffect(() => {
     Promise.all([api.getUserInfo(), api.getInitialCards()]) 
       .then(([userInfo, initialCards]) => {
+        console.log(userInfo)
         setUserId(userInfo._id);
         setUserName(userInfo.name);
         setUserDescription(userInfo.about);
@@ -22,6 +23,13 @@ function Main({onEditProfile, onEditAvatar, onAddPlace}) {
         setCards(initialCards);
       })
   }, []);
+
+  // function handleClick() {
+  // onCardClick({
+  //   name: card.name,
+  //   link: card.link
+  //   console.log(card.name)
+  // });
 
   return (
     <main className="content">
@@ -44,7 +52,7 @@ function Main({onEditProfile, onEditAvatar, onAddPlace}) {
 
       <section className="elements" aria-label="Места, которыe стоит посетить">
         {cards.map((card) => (
-          <Card card={card} key={card._id} currentUser={userId}/>
+          <Card card={card} key={card._id} currentUser={userId} onCardClick={onCardClick}/>
         ))}
       </section>
     </main>

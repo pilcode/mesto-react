@@ -4,13 +4,13 @@ import Header from './Header';
 import Main from './Main';
 import Footer from './Footer';
 import PopupWithForm from './PopupWithForm';
-
-
+import ImagePopup from './ImagePopup';
 
 function App() {
   const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = React.useState(false);
   const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = React.useState(false);
   const [isAddPlacePopupOpen, setIsAddPlacePopupOpen] = React.useState(false);
+  const [selectedCard, setSelectedCard] = React.useState({});
 
   function handleEditProfileClick() {
     setIsEditProfilePopupOpen(true);
@@ -24,12 +24,16 @@ function App() {
     setIsAddPlacePopupOpen(true);
   }
 
+  function handleCardClick(card) {
+    console.log(card)
+    setSelectedCard(card);
+  }
+
   function closeAllPopups() {
-    // setOnClose(true)
-    // if (isOpen) 
     setIsEditProfilePopupOpen(false);
     setIsEditAvatarPopupOpen(false);
     setIsAddPlacePopupOpen(false);
+    setSelectedCard(false);
   }
 
   return (
@@ -40,7 +44,8 @@ function App() {
           onEditProfile={handleEditProfileClick}
           onEditAvatar={handleEditAvatarClick}
           onAddPlace={handleAddPlaceClick}
-          />
+          onCardClick={handleCardClick}
+        />
         <Footer />
       </div>
 
@@ -99,7 +104,7 @@ function App() {
         isOpen={isAddPlacePopupOpen}
         title="Новое место"
         name="add-card"
-        onClose ={closeAllPopups}
+        onClose={closeAllPopups}
       >
         <input
           className="popup__input popup__input_type_title"
@@ -123,13 +128,18 @@ function App() {
         <span className="popup__input-error" id="card-link-error"></span>
       </PopupWithForm>
 
+        {/* попап картинки */}
+      <ImagePopup 
+        card={selectedCard}
+        onClose ={closeAllPopups}
+      />
+
       {/* удалить карточку */}
-      {/* <PopupWithForm
-        isOpen={}
+      <PopupWithForm
+        // isOpen={}
         onClose ={closeAllPopups}
       >
-        ?????
-      </PopupWithForm> */}
+      </PopupWithForm>
 
 
       {/* <div className="popup popup_type_edit">
