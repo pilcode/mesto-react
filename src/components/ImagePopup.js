@@ -1,7 +1,6 @@
 import React from 'react';
 
 function ImagePopup({card, onClose}) {
-  // дублирование
   let openClass = '';
   if (card && card.link) openClass = ' popup_opened';
     

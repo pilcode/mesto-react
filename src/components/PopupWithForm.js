@@ -8,7 +8,6 @@ function PopupWithForm({children, title, name, isOpen, onClose}) {
     <div className={`popup popup_type_${name}` + openClass}>
       <div className="popup__content">
         <h3 className="popup__title">{`${title}`}</h3>
-        {/* атребут name выглядел так name="edit-profile" */}
         <form className={`popup__form popup__form_type_${name}`} name={`${name}`}>
           {children}
           <button type="submit" className="popup__button-save">Сохранить</button>
