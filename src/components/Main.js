@@ -1,5 +1,5 @@
 import React from 'react';
-import cousteauPath from '../images/Jacques-Yves-Cousteau.jpg';
+import cousteauPath from '../images/loading-foto.png';
 import {api} from '../utils/api.js';
 import Card from './Card.js';
 
@@ -15,7 +15,6 @@ function Main({onEditProfile, onEditAvatar, onAddPlace, onCardClick}) {
   React.useEffect(() => {
     Promise.all([api.getUserInfo(), api.getInitialCards()]) 
       .then(([userInfo, initialCards]) => {
-        console.log(userInfo)
         setUserId(userInfo._id);
         setUserName(userInfo.name);
         setUserDescription(userInfo.about);
@@ -23,13 +22,6 @@ function Main({onEditProfile, onEditAvatar, onAddPlace, onCardClick}) {
         setCards(initialCards);
       })
   }, []);
-
-  // function handleClick() {
-  // onCardClick({
-  //   name: card.name,
-  //   link: card.link
-  //   console.log(card.name)
-  // });
 
   return (
     <main className="content">
@@ -40,7 +32,6 @@ function Main({onEditProfile, onEditAvatar, onAddPlace, onCardClick}) {
 
         <div className="profile__info">
           <div className="profile__info-wrapper">
-            {/* <h1 className="profile__name">Жак-Ив Кусто</h1> */}
             <h1 className="profile__name">{userName}</h1>
             <button type="button" className="profile__edit-button" onClick={onEditProfile}></button>
           </div>

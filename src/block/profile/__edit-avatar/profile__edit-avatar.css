@@ -29,3 +29,13 @@
     background-repeat: no-repeat;
     background-size: 26px 26px;
 }
+
+/*Для экранов с расширением  320-767*/
+@media screen and (max-width: 767px) {
+    .profile__edit-avatar {
+        width: 100%;
+        max-width: 120px;
+        margin: 0 auto;
+        display: block;
+    }
+}
