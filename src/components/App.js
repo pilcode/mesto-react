@@ -66,7 +66,7 @@ function App() {
           maxLength="40"
           required
         />
-        <span className="popup__input-error" id="profile-name-error"></span>
+        <span className="popup__input-error" id="profile-name-error" />
         <input
           className="popup__input popup__input_type_about" 
           type="text"
@@ -77,7 +77,7 @@ function App() {
           maxLength="200"
           required
         />
-        <span className="popup__input-error" id="profile-info-error"></span>
+        <span className="popup__input-error" id="profile-info-error" />
       </PopupWithForm>
 
       {/* редактировать аватар */}
@@ -95,7 +95,7 @@ function App() {
           placeholder="Ссылка на картинку"
           required
         />
-        <span className="popup__input-error" id="avatar-link-error"></span>
+        <span className="popup__input-error" id="avatar-link-error" />
       </PopupWithForm>
 
 
@@ -116,7 +116,7 @@ function App() {
           maxLength="30"
           required
         />
-        <span className="popup__input-error" id="card-title-error"></span>
+        <span className="popup__input-error" id="card-title-error" />
         <input
           className="popup__input popup__input_type_link"
           type="URL"
@@ -125,7 +125,7 @@ function App() {
           placeholder="Ссылка на картинку"
           required
         />
-        <span className="popup__input-error" id="card-link-error"></span>
+        <span className="popup__input-error" id="card-link-error" />
       </PopupWithForm>
 
         {/* попап картинки */}

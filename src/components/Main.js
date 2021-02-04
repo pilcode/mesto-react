@@ -27,23 +27,23 @@ function Main({onEditProfile, onEditAvatar, onAddPlace, onCardClick}) {
     <main className="content">
       <section className="profile">
         <button type="button" className="profile__edit-avatar" onClick={onEditAvatar}>
-          <img className="profile__avatar" src={userAvatar} alt={`Фотопортрет ${userName}`}/>
+          <img className="profile__avatar" src={userAvatar} alt={`Фотопортрет ${userName}`} />
         </button>
 
         <div className="profile__info">
           <div className="profile__info-wrapper">
             <h1 className="profile__name">{userName}</h1>
-            <button type="button" className="profile__edit-button" onClick={onEditProfile}></button>
+            <button type="button" className="profile__edit-button" onClick={onEditProfile} />
           </div>
           <p className="profile__about">{userDescription}</p>
         </div>
 
-        <button type="button" className="profile__add-button" onClick={onAddPlace}></button>
+        <button type="button" className="profile__add-button" onClick={onAddPlace} />
       </section>
 
       <section className="elements" aria-label="Места, которыe стоит посетить">
         {cards.map((card) => (
-          <Card card={card} key={card._id} currentUser={userId} onCardClick={onCardClick}/>
+          <Card card={card} key={card._id} currentUser={userId} onCardClick={onCardClick} />
         ))}
       </section>
     </main>

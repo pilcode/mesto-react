@@ -8,10 +8,10 @@ function ImagePopup({card, onClose}) {
     <div className={`popup popup_type_image` + openClass}>
       <div className="popup__content popup__content_type_image">
         <figure className="popup__figure">
-          <img className="popup__image" alt={card.name} src={card.link}/>
+          <img className="popup__image" alt={card.name} src={card.link} />
           <figcaption className="popup__caption">{card.name}</figcaption>
         </figure>
-        <button type="button" className="popup__button-close" onClick={onClose}></button>
+        <button type="button" className="popup__button-close" onClick={onClose} />
       </div>
     </div>
   )

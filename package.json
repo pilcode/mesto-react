@@ -1,5 +1,7 @@
 {
   "name": "mesto-react",
+  "author": "Irina Pivivarova",
+  "description": "Учебный проект. Выполнен в рамках обучающего курса от Яндекс Практикум",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
