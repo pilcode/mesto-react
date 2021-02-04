@@ -1,6 +1,6 @@
 import React from 'react';
 import cousteauPath from '../images/loading-foto.png';
-import {api} from '../utils/api.js';
+import api from '../utils/api.js';
 import Card from './Card.js';
 
 
