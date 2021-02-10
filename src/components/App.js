@@ -5,6 +5,7 @@ import Main from './Main';
 import Footer from './Footer';
 import PopupWithForm from './PopupWithForm';
 import ImagePopup from './ImagePopup';
+import EditProfilePopup from './EditProfilePopup';
 import {CurrentUserContext} from '../contexts/CurrentUserContext';
 import api from '../utils/api.js';
 
@@ -39,6 +40,14 @@ function App() {
     setSelectedCard(false);
   };
 
+  function handleProfileSubmit(name, description) {
+    api.updateUser({name, info: description})
+      .then(() => {
+        setCurrentUser({...currentUser, name, about: description});
+        closeAllPopups();
+      })
+  }
+
   React.useEffect(() => {
     Promise.all([api.getUserInfo()]) 
       .then(([userInfo]) => {
@@ -60,35 +69,7 @@ function App() {
       </div>
 
       {/* редактировать профиль */}
-      <PopupWithForm 
-        isOpen={isEditProfilePopupOpen}
-        title="Редактировать профиль"
-        name="edit"
-        onClose ={closeAllPopups}
-      >
-        <input
-          className="popup__input popup__input_type_name"
-          type="text"
-          name="name"
-          id="profile-name"
-          placeholder="Имя"
-          minLength="2"
-          maxLength="40"
-          required
-        />
-        <span className="popup__input-error" id="profile-name-error" />
-        <input
-          className="popup__input popup__input_type_about" 
-          type="text"
-          name="info"
-          id="profile-info"
-          placeholder="О себе"
-          minLength="2"
-          maxLength="200"
-          required
-        />
-        <span className="popup__input-error" id="profile-info-error" />
-      </PopupWithForm>
+      <EditProfilePopup isOpen={isEditProfilePopupOpen} onClose={closeAllPopups} onSubmit={handleProfileSubmit} />
 
       {/* редактировать аватар */}
       <PopupWithForm
