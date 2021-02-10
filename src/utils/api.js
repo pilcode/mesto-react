@@ -91,27 +91,14 @@ class Api {
       })
   }
 
-  //функция: добавить лайк
-  likeCard(idCard) {
+  changeLikeCardStatus(idCard, value) {
     return fetch(`${this._baseUrl}/cards/likes/${idCard}`, {
-      method: 'PUT',
+      method: value ? 'PUT' : 'DELETE',
       headers: this._headers
     })
       .then(this._handleResponse)
       .catch((error) => {
           console.log(error)
-      })
-  }
-
-  //функция: удалить лайк
-  deletLike(idCard) {
-    return fetch(`${this._baseUrl}/cards/likes/${idCard}`, {
-      method: 'DELETE',
-      headers: this._headers
-    })
-      .then(this._handleResponse)
-      .catch((error) => {
-        console.log(error)
       })
   }
 };
