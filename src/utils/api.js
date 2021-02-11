@@ -64,13 +64,13 @@ class Api {
   }
 
   //функция: добавить новую карточку
-  addCard(data) {
+  addCard({name, link}) {
     return fetch(`${this._baseUrl}/cards`, {
       method: 'POST',
       headers: this._headers,
       body: JSON.stringify({
-        name: data.name,
-        link: data.link
+        name: name,
+        link: link
       })
     }) 
       .then(this._handleResponse)

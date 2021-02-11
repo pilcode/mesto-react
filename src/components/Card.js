@@ -24,7 +24,6 @@ function Card({card, onCardClick, onCardLike, onCardDelete}) {
     onCardDelete(card);
   };
 
-  // onClick={handleDeleteClick}
   return (
     <article className="element">
       {cardDeleteButtonClassName}
