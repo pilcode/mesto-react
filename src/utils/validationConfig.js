@@ -1,4 +1,5 @@
 //создаю объект со всеми нужными классами форм
+//доделать валидацию, отображение сохранения и попап удаления
 const validationConfig = {
   formSelector: '.popup__form',
   inputSelector: '.popup__input',
