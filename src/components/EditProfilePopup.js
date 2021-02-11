@@ -22,7 +22,7 @@ function EditProfilePopup({isOpen, onClose, onSubmit}) {
   }
 
   function handleSubmit() {
-    onSubmit(name, description)
+    onSubmit(name, description);
   }
 
   return (

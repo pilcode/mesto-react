@@ -6,6 +6,7 @@ import Footer from './Footer';
 import PopupWithForm from './PopupWithForm';
 import ImagePopup from './ImagePopup';
 import EditProfilePopup from './EditProfilePopup';
+import EditAvatarPopup from './EditAvatarPopup';
 import {CurrentUserContext} from '../contexts/CurrentUserContext';
 import api from '../utils/api.js';
 
@@ -15,6 +16,17 @@ function App() {
   const [isAddPlacePopupOpen, setIsAddPlacePopupOpen] = React.useState(false);
   const [selectedCard, setSelectedCard] = React.useState({});
   const [currentUser, setCurrentUser] = React.useState({});
+
+
+  React.useEffect(() => {
+    Promise.all([api.getUserInfo()]) 
+      .then(([userInfo]) => {
+        setCurrentUser(userInfo);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
 
   function handleEditProfileClick() {
     setIsEditProfilePopupOpen(true);
@@ -28,7 +40,6 @@ function App() {
     setIsAddPlacePopupOpen(true);
   };
 
-  // прокидываю данные для ImagePopup из Card через Main (onCardClick={})
   function handleCardClick(card) {
     setSelectedCard(card);
   };
@@ -46,14 +57,21 @@ function App() {
         setCurrentUser({...currentUser, name, about: description});
         closeAllPopups();
       })
+      .catch((error) => {
+        console.log(error);
+      });
   }
 
-  React.useEffect(() => {
-    Promise.all([api.getUserInfo()]) 
-      .then(([userInfo]) => {
-        setCurrentUser(userInfo);
+  function handleAvatarSubmit({avatar}) {
+    api.updateAvatar({link: avatar})
+      .then(() => {
+        setCurrentUser({...currentUser, avatar});
+        closeAllPopups();
       })
-  }, []);
+      .catch((error) => {
+        console.log(error);
+      });
+  } 
 
   return (
     <CurrentUserContext.Provider value={currentUser}>
@@ -72,23 +90,7 @@ function App() {
       <EditProfilePopup isOpen={isEditProfilePopupOpen} onClose={closeAllPopups} onSubmit={handleProfileSubmit} />
 
       {/* редактировать аватар */}
-      <PopupWithForm
-        isOpen={isEditAvatarPopupOpen}
-        title="Обновить аватар"
-        name="edit-avatar"
-        onClose ={closeAllPopups}
-      >
-        <input
-          className="popup__input popup__input_type_link"
-          type="URL"
-          name="link"
-          id="avatar-link"
-          placeholder="Ссылка на картинку"
-          required
-        />
-        <span className="popup__input-error" id="avatar-link-error" />
-      </PopupWithForm>
-
+      <EditAvatarPopup isOpen={isEditAvatarPopupOpen} onClose={closeAllPopups} onSubmit={handleAvatarSubmit} />
 
       {/* добавить карточку */}
       <PopupWithForm
