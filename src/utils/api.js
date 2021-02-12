@@ -18,9 +18,6 @@ class Api {
       headers: this._headers
     })
       .then(this._handleResponse)
-      .catch((error) => {
-        console.log(error)
-      })
   }
 
   //функция: редакировать провиль
