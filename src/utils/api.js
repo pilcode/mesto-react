@@ -18,9 +18,6 @@ class Api {
       headers: this._headers
     })
       .then(this._handleResponse)
-      .catch((error) => {
-        console.log(error)
-      })
   }
 
   //функция: редакировать провиль
@@ -34,9 +31,6 @@ class Api {
       })
     })
       .then(this._handleResponse)
-      .catch((error) => {
-        console.log(error)
-      }) 
   }
 
   //фуекция: редактировать аватар провиля
@@ -46,10 +40,7 @@ class Api {
       headers: this._headers,
       body: JSON.stringify({avatar: link})
     })
-      .then(this._handleResponse)
-      .catch((error) => {
-          console.log(error)
-      }) 
+      .then(this._handleResponse) 
   }
 
   //функция: получить карточки с сервера
@@ -58,9 +49,7 @@ class Api {
       headers: this._headers
     })
       .then(this._handleResponse)
-      .catch((error) => {
-          console.log(error)
-      })
+ 
   }
 
   //функция: добавить новую карточку
@@ -74,9 +63,7 @@ class Api {
       })
     }) 
       .then(this._handleResponse)
-      .catch((error) => {
-        console.log(error)
-      }) 
+  
   }
 
   //функция: удалить карточку
@@ -86,9 +73,6 @@ class Api {
       headers: this._headers
     })
       .then(this._handleResponse)
-      .catch((error) => {
-        console.log(error)
-      })
   }
 
   changeLikeCardStatus(idCard, value) {
@@ -97,9 +81,6 @@ class Api {
       headers: this._headers
     })
       .then(this._handleResponse)
-      .catch((error) => {
-          console.log(error)
-      })
   }
 };
 
