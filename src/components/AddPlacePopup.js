@@ -31,6 +31,7 @@ function AddPlacePopup({isOpen, onClose, onSubmit}) {
       name="add-card"
       onClose={onClose}
       onSubmit={handleSubmit}
+      buttonText="Сохранить"
     >
       <input
         className="popup__input popup__input_type_title"

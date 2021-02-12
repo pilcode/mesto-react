@@ -159,7 +159,7 @@ function App() {
       />
 
       {/* удалить карточку(доделать) */}
-      <PopupWithForm />
+      <PopupWithForm buttonText="Да"/>
     </CurrentUserContext.Provider>
   );
 }

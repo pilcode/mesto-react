@@ -32,6 +32,7 @@ function EditProfilePopup({isOpen, onClose, onSubmit}) {
       name="edit"
       onClose ={onClose}
       onSubmit={handleSubmit}
+      buttonText="Сохранить"
     >
       <input
         className="popup__input popup__input_type_name"
